@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncontrolled Form Fundamentals</title>
+    <style>
+        body{
+            background: rgb(63,94,251);
+            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(206,100,121,1) 100%);
+            text-align: center;
+        }
+        form{
+            width: 30%;
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            border-radius: 10px;
+            display: flex;
+            padding: 50px;
+            margin: auto;
+            margin-top: 200px;
+            flex-direction: column;
+        }
+        form > input{
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: none;
+        }
+        form>button{
+            width: 20%;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            margin: auto;
+        }
+        form>button:hover{
+            background-color: skyblue;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+</body>
+</html>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel" src="script.js"></script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h2>User Management</h2>
+
+    <input type="text" id="name" placeholder="Name">
+    <input type="email" id="email" placeholder="Email">
+    <button onclick="addUser()">Add User</button>
+
+    <ul id="userList"></ul>
+
+    <script>
+        const firebaseURL = "https://masai-45749-default-rtdb.firebaseio.com/users";
+
+        function fetchUsers() {
+            axios.get(`${firebaseURL}.json`).then(res => {
+                const users = res.data;
+                let list = "";
+                for (let id in users) {
+                    list += `<li>${users[id].name} - ${users[id].email} 
+                        <button onclick="editUser('${id}', '${users[id].name}', '${users[id].email}')">Edit</button> 
+                        <button onclick="deleteUser('${id}')">Delete</button></li>`;
+                }
+                document.getElementById("userList").innerHTML = list;
+            });
+        }
+
+        function addUser() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            if (!name || !email) return alert("Enter name and valid email!");
+            
+            axios.post(`${firebaseURL}.json`, { name, email }).then(fetchUsers);
+        }
+
+      
+
+        function deleteUser(id) {
+            if (confirm("Delete user?")) {
+                axios.delete(`${firebaseURL}/${id}.json`).then(fetchUsers);
+            }
+        }
+
+        fetchUsers();
+    </script>
+</body>
+</html>
