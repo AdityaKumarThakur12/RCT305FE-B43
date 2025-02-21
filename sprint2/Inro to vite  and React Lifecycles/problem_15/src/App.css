@@ -1,0 +1,78 @@
+.container {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #2c3e50;
+  color: white;
+}
+
+.task-status {
+  display: flex;
+  gap: 20px;
+}
+
+.status-card {
+  position: relative;
+  padding: 10px 20px;
+  background: #34495e;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hover-list {
+  display: none;
+  position: absolute;
+  background: white;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  top: 40px;
+  left: 0;
+  min-width: 120px;
+}
+
+.status-card:hover .hover-list {
+  display: block;
+}
+
+.task-input {
+  margin: 20px 0;
+}
+.task-input>button{
+  padding: 8px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.task-input input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ecf0f1;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.task-item select {
+  margin: 0 10px;
+}
