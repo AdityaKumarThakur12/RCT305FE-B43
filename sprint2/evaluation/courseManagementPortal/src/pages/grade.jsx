@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Grade = ()=>{
-    const [grades, setGrades] = useState(null);
+    const [grade, setGrades] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 

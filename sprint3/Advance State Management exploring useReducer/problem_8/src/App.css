@@ -1,0 +1,17 @@
+/* src/App.css */
+
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+p {
+  font-size: 24px;
+  margin-top: 20px;
+}
